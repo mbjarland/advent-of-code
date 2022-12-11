@@ -1,7 +1,7 @@
 (ns aoc.day-08
   (:require [clojure.string :refer [split]]))
 
-(let [nd    (mapv #(mapv (comp parse-long str) %) (split (slurp "../day_08.data") #"\n"))
+(let [nd    (mapv #(mapv (comp parse-long str) %) (split (slurp "data/2022_08") #"\n"))
       td    (apply mapv vector nd)
       [my mx] [(dec (count nd)) (dec (count td))]
       views (fn [y x] [(reverse (take x (nd y))) (drop (inc x) (nd y))
