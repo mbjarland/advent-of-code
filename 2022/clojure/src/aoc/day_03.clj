@@ -4,7 +4,7 @@
   (merge (zipmap "abcdefghijklmnopqrstuvwxyz" (range 1 27))
          (zipmap "ABCDEFGHIJKLMNOPQRSTUVWXYZ" (range 27 53))))
 
-(def lines (re-seq #".+" (slurp "../day_03.data")))
+(def lines (re-seq #".+" (slurp "data/2022_03")))
 
 (defn input-1 []
   (for [line lines

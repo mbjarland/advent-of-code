@@ -22,7 +22,7 @@
                  (rest (reductions conj [] (:path state)))))))
 
 (defn parse []
-  (->> (slurp "../day_07.data")
+  (->> (slurp "data/2022_07")
        (re-seq #"\$ (cd) (.+)|(\d+)")
        (reduce parser {:path []})
        :size vals sort reverse))

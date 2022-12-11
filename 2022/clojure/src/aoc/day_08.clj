@@ -21,7 +21,7 @@
 
 (comment
   ;; nice alternative by @nooga - revised by @Apple
-  (let [d        (->> (slurp "../day_08.data")
+  (let [d        (->> (slurp "data/2022_08")
                       (re-seq #"[^\n]+")
                       (map #(->> (re-seq #"\d" %) (map parse-long))))
         seen     (fn [row]

@@ -11,7 +11,7 @@
   (partition 3 (map parse-long (re-seq #"\d+" os))))
 
 (defn solve [cfn]
-  (let [[is os] (split (slurp "../day_05.data") #"\n\n")]
+  (let [[is os] (split (slurp "data/2022_05") #"\n\n")]
     (reduce (fn [a [n f t]]
               (let [[s r] (split-at n (a (dec f)))]
                 (-> (assoc a (dec f) r)

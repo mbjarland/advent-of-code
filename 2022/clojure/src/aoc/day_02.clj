@@ -10,7 +10,7 @@
               \C {\X 2 \Y 6 \Z 7}})
 
 (defn input [score]
-  (for [[a _ b] (re-seq #".+" (slurp "../day_02.data"))]
+  (for [[a _ b] (re-seq #".+" (slurp "data/2022_02"))]
     ((score a) b)))
 
 (defn solution-1 []

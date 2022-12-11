@@ -2,7 +2,7 @@
   (:require [clojure.string :as str]))
 
 (defn input []
-  (for [elf (str/split (slurp "../day_01.data") #"\n\n")]
+  (for [elf (str/split (slurp "data/2022_01") #"\n\n")]
    (reduce + (map parse-long (re-seq #"\d+" elf)))))
 
 (defn solution-1 []

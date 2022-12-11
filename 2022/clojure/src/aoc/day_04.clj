@@ -2,7 +2,7 @@
   (:require [clojure.set :refer [subset?]]))
 
 (defn input []
-  (for [line (re-seq #".+" (slurp "../day_04.data"))
+  (for [line (re-seq #".+" (slurp "data/2022_04"))
         :let [[a b c d] (map parse-long (re-seq #"\d+" line))]]
     [(set (range a (inc b))) (set (range c (inc d)))]))
 
