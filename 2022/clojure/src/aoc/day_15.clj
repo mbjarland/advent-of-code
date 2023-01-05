@@ -15,12 +15,12 @@
                         (let [bi (sort (filter #(<= a % b) (bf y)))]
                           (map (fn [[c d]] [(inc c) (dec d)])
                                (partition 2 1 (flatten [(dec a) bi (inc b)])))))
-                  res (sort (reduce mf [] (sort (keep zf d))))]
+                  res (sort (reduce mf [] (sort (keep zf d))))]  ; result
               (if eb? (mapcat ef res) res)))
       xyf (fn [y] (let [f (fn [[[_ a] [b _]]] (map #(vector % y) (range (inc a) b)))]
                     (some identity (mapcat f (partition 2 1 (rf false y))))))]
-  (prn {:one (reduce (fn [r [a b]] (+ r (- b a) 1)) 0 (rf true 2000000)) ;(rf 2000000))
-        :two (let [[x y] (some xyf (range 0 4000001))] (+ (* x 4000000) y))}))
+  (time (prn {:one (reduce (fn [r [a b]] (+ r (- b a) 1)) 0 (rf true 2000000)) ;(rf 2000000))
+              :two (let [[x y] (some xyf (range 0 4000001))] (+ (* x 4000000) y))})))
 
 ; {:one 7730280, :two 10382630753392}
 ; takes about 20s to complete
