@@ -10,6 +10,7 @@
                :dv d                                        ;; divisor
                :op #(({\+ + \* *} o) % (or a %))            ;; operation
                :tx #(if (zero? (mod % d)) t f)})))          ;; transfer
+
 (defn parse []
   (->> (split (slurp "data/2022_11") #"\n\n")
        (map #(re-seq #"[*+] ?(?:\d+|old)|[\d]+" %))
